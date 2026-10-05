@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Customer Survey</title>
+    <style>
+        /* Thiết lập giao diện theo phong cách Wufoo Form */
+        body {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .wufoo {
+            max-width: 600px;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-top: 8px solid #006699; /* Thanh màu đặc trưng kiểu Wufoo */
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #222;
+            font-size: 24px;
+        }
+
+        .info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 15px;
+        }
+
+        .field-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .req {
+            color: red;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #006699;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 102, 153, 0.3);
+        }
+
+        .name-fields {
+            display: flex;
+            gap: 15px;
+        }
+
+        .name-fields div {
+            flex: 1;
+        }
+
+        .name-sublabel {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+            display: block;
+            font-weight: normal;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .form-actions {
+            margin-top: 30px;
+        }
+
+        button[type="submit"] {
+            background-color: #006699;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #004d73;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wufoo">
+        <h2>Customer Survey</h2>
+        <p class="info">Please take a few moments to fill out this survey and share your feedback with us.</p>
+        
+        <form action="#" method="POST">
+            
+            <!-- Trường Họ và Tên -->
+            <div class="field-container">
+                <label>Name <span class="req">*</span></label>
+                <div class="name-fields">
+                    <div>
+                        <input type="text" name="firstname" required>
+                        <span class="name-sublabel">First</span>
+                    </div>
+                    <div>
+                        <input type="text" name="lastname" required>
+                        <span class="name-sublabel">Last</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trường Email -->
+            <div class="field-container">
+                <label for="email">Email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Trường Đánh giá mức độ hài lòng (Radio) -->
+            <div class="field-container">
+                <label>How satisfied are you with our service?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="satisfaction" value="very_satisfied"> Very Satisfied</label>
+                    <label><input type="radio" name="satisfaction" value="satisfied"> Satisfied</label>
+                    <Dưới đây là hướng dẫn chi tiết và mã nguồn hoàn chỉnh giúp bạn xây dựng một **Form khảo sát khách hàng (Customer Survey)** với phong cách giao diện chuyên nghiệp, gọn gàng tương tự các mẫu form phổ biến trên nền tảng Wufoo.
+
+---
+
+### Bước 1: Tạo tệp HTML cho bài tập
+
+1. Mở phần mềm soạn thảo văn bản của bạn (như **VS Code** hoặc **Notepad**).
+2. Tạo một tệp mới và lưu lại với tên chính xác là: **`survey-form.html`**.
+
+---
+
+### Bước 2: Viết mã nguồn HTML và CSS
+
+Dán toàn bộ đoạn mã dưới đây vào tệp `survey-form.html`. Mã nguồn đã được cấu hình font chữ tiêu chuẩn (`Lucida Grande`, `Tahoma`, `sans-serif`), bố cục căn chỉnh hiện đại, màu sắc hài hòa và có đầy đủ các trường khảo sát chuẩn:
+
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Khảo sát ý kiến khách hàng</title>
+    <style>
+        /* Cấu hình chung và font chữ theo chuẩn Wufoo */
+        body {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            background-color: #eef2f5;
+            color: #333;
+            margin: 0;
+            padding: 30px;
+        }
+
+        /* Khung chứa form (Container) */
+        .survey-container {
+            max-width: 650px;
+            background: #ffffff;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Phần tiêu đề đầu form */
+        .form-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .form-header h2 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+
+        .form-header p {
+            margin: 0;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        /* Phần nội dung form */
+        .form-body {
+            padding: 30px;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+        }
+
+        .question-block label.question-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+
+        .options-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .options-group label {
+            font-weight: normal;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Ô nhập liệu và textarea */
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccd1d9;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .input-row {
+            margin-bottom: 15px;
+        }
+
+        /* Nút gửi */
+        .form-actions {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        button[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #219653;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="survey-container">
+        <!-- Tiêu đề form -->
+        <div class="form-header">
+            <h2>Khảo sát ý kiến khách hàng</h2>
+            <p>Ý kiến của bạn giúp chúng tôi cải thiện chất lượng dịch vụ tốt hơn mỗi ngày.</p>
+        </div>
+        
+        <!-- Nội dung câu hỏi -->
+        <div class="form-body">
+            <form action="#" method="POST">
+                
+                <!-- Câu hỏi 1 -->
+                <div class="question-block">
+                    <label class="question-title">1. Bạn đánh giá thế nào về mức độ hài lòng chung đối với dịch vụ của chúng tôi?</label>
+                    <div class="options-group">
+                        <label><input type="radio" name="satisfaction" value="very_satisfied"> Rất hài lòng</label>
+                        <label><input type="radio" name="satisfaction" value="satisfied"> Hài lòng</label>
+                        <label><input type="radio" name="satisfaction" value="neutral"> Bình thường</label>
+                        <label><input type="radio" name="satisfaction" value="dissatisfied"> Không hài lòng</label>
+                    </div>
+                </div>
+
+                <!-- Câu hỏi 2 -->
+                <div class="question-block">
+                    <label class="question-title">2. Bạn có sẵn sàng giới thiệu sản phẩm/dịch vụ của chúng tôi cho bạn bè hoặc đồng nghiệp không?</label>
+                    <div class="options-group">
+                        <label><input type="radio" name="recommend" value="definitely"> Chắc chắn rồi</label>
+                        <label><input type="radio" name="recommend" value="maybe"> Có thể</label>
+                        <label><input type="radio" name="recommend" value="no"> Không</label>
+                    </div>
+                </div>
+
+                <!-- Câu hỏi 3 -->
+                <div class="question-block">
+                    <label class="question-title" for="comments">3. Bạn có ý kiến đóng góp hoặc phản hồi nào khác không?</label>
+                    <textarea id="comments" name="comments" placeholder="Nhập ý kiến của bạn tại đây..."></textarea>
+                </div>
+
+                <!-- Thông tin liên hệ tùy chọn -->
+                <div class="question-block">
+                    <label class="question-title">Thông tin liên hệ (Không bắt buộc)</label>
+                    <div class="input-row">
+                        <input type="text" name="fullname" placeholder="Họ và tên">
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Địa chỉ email">
+                    </div>
+                </div>
+
+                <!-- Nút gửi khảo sát -->
+                <div class="form-actions">
+                    <button type="submit">Gửi khảo sát</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
